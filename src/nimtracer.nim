@@ -1,5 +1,7 @@
 import std/strformat
 
+import color
+import vec3
 
 const image_width = 256
 const image_height = 256
@@ -14,11 +16,9 @@ proc main =
       let r = i/(image_width-1)
       let g = j/(image_height-1)
       let b = 0.0
+      let c = Color(r:r,g:g,b:b)
+      c.write(f)
 
-      let ir = int(255.999*r)
-      let ig = int(255.999*g)
-      let ib = int(255.999*b)
-      f.write(&"{ir} {ig} {ib}\n")
 
 when isMainModule:
   main()
